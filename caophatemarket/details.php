@@ -4,7 +4,31 @@
 include 'inc/header.php';
 
 ?> 	
+<?php
 
+if(!isset($_GET['proid']) || $_GET['proid']==NULL){
+   echo "<script>window.location ='404.php'</script>";
+}else{
+	$id = $_GET['proid']; 
+}
+ $customer_id = Session::get('customer_id');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['wishlist'])) {
+
+	$productid = $_POST['productid'];
+	$insertWishlist = $product->insertWishlist($productid, $customer_id);
+	
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+
+	$quantity = $_POST['quantity'];
+	$insertCart = $ct->add_to_cart($quantity, $id);
+	
+}
+// if(isset($_POST['binhluan_submit'])){
+// 	$binhluan_insert = $cs->insert_binhluan();
+// }
+?>
 
 <!-- -------------------------------------------------------------------------------------------- -->
 
@@ -43,6 +67,30 @@ include 'inc/header.php';
 							echo $insertCart;
 						}
 					?>			
+				</div>
+				<div class="add-cart">
+					<div class="button_details">
+					<form action="" method="POST">	
+						<input type="hidden" name="productid" value="<?php echo $result_details['productId'] ?>"/>					
+						<?php
+							$login_check = Session::get('customer_login'); 
+							if($login_check){							
+								echo '<input type="submit" class="buysubmit" name="wishlist" value="Thêm vào yêu thích">';
+							}else{
+								echo '';
+							}		
+						?>														
+					</form>
+
+					</div>
+					<div class="clear"></div>
+					<p>					
+						<?php
+							if(isset($insertWishlist)){
+							echo $insertWishlist;
+						}
+						?>										
+					</p>					
 				</div>
 
 			</div>

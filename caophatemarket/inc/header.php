@@ -123,6 +123,7 @@
 			}else{
 				echo '<li><a href="?page=profile&action=profile">Profile</a> </li>';
 				echo '<li><a href="?page=order&action=order">Order</a> </li>';
+				echo '<li><a href="?page=wishlist&action=wishlist">Wishlist</a> </li>';
 			}
 			 ?>
 			
