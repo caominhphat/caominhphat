@@ -18,15 +18,15 @@
 			$this->db = new Database();
 			$this->fm = new Format();
 		}
-		public function insert_binhluan(){
+		public function insert_binhluan( $customer_id){
 			$product_id = $_POST['product_id_binhluan'];
-			$tenbinhluan = $_POST['tennguoibinhluan'];
-			$binhluan = $_POST['binhluan'];
-			if($tenbinhluan=='' || $binhluan==''){
-				$alert = "<span class='error'>Không để trống các trường</span>";
+			$customer_id = $customer_id;
+			$comment = $_POST['binhluan'];
+			if($comment==''){
+				$alert = "<span class='error'>Please leave a comment</span>";
 				return $alert;
 			}else{
-				$query = "INSERT INTO tbl_binhluan(tenbinhluan,binhluan,product_id) VALUES('$tenbinhluan','$binhluan','$product_id')";
+				$query = "INSERT INTO tbl_comment(product_id,customer_id,comment,status) VALUES('$product_id','$customer_id','$comment',0)";
 					$result = $this->db->insert($query);
 					if($result){
 						$alert = "<span class='success'>Bình luận đã gửi</span>";
@@ -38,21 +38,31 @@
 			}
 		}
 		public function del_comment($id){
-			$query = "DELETE FROM tbl_binhluan where binhluan_id = '$id'";
+			$query = "DELETE FROM tbl_comment where id = '$id'";
 			$result = $this->db->delete($query);
-			if($result){
-				$alert = "<span class='success'>Xóa bình luận thành công</span>";
-				return $alert;
-			}else{
-				$alert = "<span class='error'>Xóa bình luận không thành công</span>";
-				return $alert;
-			}
+			
 		}
-		public function show_comment(){
-			$query = "SELECT * FROM tbl_binhluan order by binhluan_id desc";
+		public function show_comment($product_id){
+			$query = "SELECT tbl_comment.*, tbl_customer.name FROM tbl_comment INNER JOIN tbl_customer ON tbl_comment.customer_id = tbl_customer.id WHERE product_id = $product_id order by id desc";
 			$result = $this->db->select($query);
-			return $result;
+			return $result;			
 		}
+
+		public function show_all_comment(){
+			$query = "SELECT tbl_comment.*, tbl_customer.name, tbl_product.productName FROM tbl_comment 
+					  INNER JOIN tbl_customer ON tbl_comment.customer_id = tbl_customer.id
+					  INNER JOIN tbl_product ON tbl_comment.product_id = tbl_product.productId 
+					  order by id desc";
+			$result = $this->db->select($query);
+			return $result;			
+		}
+
+		public function approve_comment($id){
+			$query = "UPDATE tbl_comment SET status = 1 WHERE id ='$id'";
+			$result = $this->db->insert($query);
+			return $result;	
+		}
+		
 		public function insert_customers($data){
 			$name = mysqli_real_escape_string($this->db->link, $data['name']);
 			$city = mysqli_real_escape_string($this->db->link, $data['city']);

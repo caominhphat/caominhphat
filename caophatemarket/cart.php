@@ -19,7 +19,7 @@ include 'inc/header.php';
     <div class="content">
         <div class="cartoption">
             <div class="cartpage">
-                <h2>Your Cart</h2>
+            <h2 style="width: 100%;text-align: center;">Your Cart</h2>
                 <?php
 							if(isset($update_quantity_cart)){
 								echo $update_quantity_cart;
@@ -110,13 +110,11 @@ include 'inc/header.php';
 					}
 					  ?>
             </div>
-            <div class="shopping">
-                <div class="shopleft">
-                    <a href="?page=home"> <img src="images/shop.png" alt="" /></a>
-                </div>
-                <div class="shopright">
-                    <a href="?page=payment&action=payment"> <img src="images/check.png" alt="" /></a>
-                </div>
+            <div style="display:flex">
+               
+                    <a style="width:50%;margin: 0px;text-align:right" href="?page=home"> <img src="images/shop.png" alt="" /></a>                        
+                    <a style="width:50%;margin: 0px;text-align:left;width:250px;height:100px;" href="?page=payment&action=payment"> <img src="images/check.png" alt="" /></a>
+         
             </div>
         </div>
         <div class="clear"></div>

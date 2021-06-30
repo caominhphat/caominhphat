@@ -13,8 +13,7 @@
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2>Wishlist</h2>
-			    	
+			    	<h2 style="width: 100%;text-align: center;">Wishlist</h2>
 						<table class="tblone">
 							<tr>
 								<th width="10%">No.</th>
@@ -51,9 +50,9 @@
 							
 						</table>																				
 					</div>
-					<div class="shopping">
-						<div class="shopleft">
-							<a href="index.php"> <img src="images/shop.png" alt="" /></a>
+					<div class="shopping" style="width: 100%;text-align: center;">
+						<div class="shopleft" style="width: 100%">
+							<a href="?page=home" style="display: inline-block;"> <img src="images/shop.png" alt="" /></a>
 						</div>
 						
 					</div>

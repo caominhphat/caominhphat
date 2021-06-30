@@ -43,8 +43,13 @@
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script> 
 <script type="text/javascript" src="js/nav-hover.js"></script>
+<script type="text/javascript" src="js/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-4.5.0-dist/css/bootstrap.min.css"></script>
 <link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
+
+
+
 
 <script type="text/javascript">
   $(document).ready(function($){

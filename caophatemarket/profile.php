@@ -19,10 +19,10 @@
  <div class="main">
     <div class="content">
     	<div class="section group">
-    		<div class="content_top">
-	    		<div class="heading">
-	    		<h3>Profile Customers</h3>
-	    		</div>
+    		<div class="content_top" style="text-align: center;">
+	    		
+	    		<h2 style="width: 100%;text-align: center;">Profile Customers</h2>
+	    	
 	    		<div class="clear"></div>
     		</div>
 			

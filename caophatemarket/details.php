@@ -4,6 +4,53 @@
 include 'inc/header.php';
 
 ?> 	
+<style>
+.cmt-form{
+		
+		margin-left: 20px;
+		width: 50%;
+}
+textarea{
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+		width: 100%;
+}
+	.comment{
+		border: 1px solid black;
+		
+		width: 100%;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+		background-color : #f2f2f2;
+	}
+	.comment ul li:first-child{
+		margin-top:20px;
+	}
+	ul{
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	ul li{
+		line-height:20px;
+	}
+
+	.btn{
+		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 5px;
+		border-top-right-radius: 5px;
+		border-top-left-radius: 5px;
+		width: 20%;
+		line-height:20px;
+		background-color: #A75DCF;
+		border: 1px solid #A75DCF;
+		color: #FFFFFF;
+	}
+
+</style>
 <?php
 
 if(!isset($_GET['proid']) || $_GET['proid']==NULL){
@@ -24,6 +71,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 	$quantity = $_POST['quantity'];
 	$insertCart = $ct->add_to_cart($quantity, $id);
 	
+}
+
+if(isset($_POST['binhluan_submit'])){
+	$binhluan_insert = $cs->insert_binhluan( $customer_id);
 }
 // if(isset($_POST['binhluan_submit'])){
 // 	$binhluan_insert = $cs->insert_binhluan();
@@ -95,9 +146,48 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
 			</div>
 			<div class="product-desc">
-			<h2>Product Details</h2>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-	        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+			<h2>Comments</h2>
+			<div class="comment">
+				<ul>
+				<?php 
+				$product_id = $_GET['proid'];
+				$getall_comment = $cs->show_comment($product_id);
+				if($getall_comment){
+					while($result = $getall_comment->fetch_assoc()){
+				 ?>
+					<li>
+						<div style="font-weight: bold;"><?php echo $result["name"]; ?></div>
+						<div><?php echo $result["comment"]; ?></div>
+					</li>
+					<br>
+					<?php 
+					}
+				 }
+				  ?>									
+				</ul>
+
+				<?php 
+					$login_check = Session::get('customer_login'); 
+					$id = $_GET['proid'];
+					if($login_check==false){
+						echo '<p style="margin-left:20px;">Please login to comment <p>';
+					}else{
+						echo '									
+								<form action="" method="POST" class="cmt-form">
+									<p><input type="hidden" value="<?php echo $id ?>" name="product_id_binhluan"></p>
+									<p><textarea rows="5" style="resize: none;" placeholder="Leave a comment" class="form-control" name="binhluan"></textarea></p>
+						 			<p><?php if(isset($binhluan_insert)){
+												echo $binhluan_insert;
+												}
+										?> </p>
+						 			<p><input type="submit" name="binhluan_submit" class="btn btn-success" value="Comment"></p>
+					 			</form>
+							';
+						
+					}
+					 ?>
+																											
+			</div>
 	    </div>
 				
 	</div>
