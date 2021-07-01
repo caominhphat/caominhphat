@@ -43,7 +43,7 @@
 			
 		}
 		public function show_comment($product_id){
-			$query = "SELECT tbl_comment.*, tbl_customer.name FROM tbl_comment INNER JOIN tbl_customer ON tbl_comment.customer_id = tbl_customer.id WHERE product_id = $product_id order by id desc";
+			$query = "SELECT tbl_comment.*, tbl_customer.name FROM tbl_comment INNER JOIN tbl_customer ON tbl_comment.customer_id = tbl_customer.id WHERE product_id = $product_id AND status = 1 order by id desc";
 			$result = $this->db->select($query);
 			return $result;			
 		}
@@ -109,7 +109,12 @@
 					Session::set('customer_login',true);
 					Session::set('customer_id',$value['id']);
 					Session::set('customer_name',$value['name']);
-					header('Location:?page=cart&action=cart');
+					$login_check = Session::get('login_cart'); 
+					if($login_check){
+						header('Location:?page=cart&action=cart');
+						unset($_SESSION['login_cart']);
+					} else header('Location:?page=home');
+					
 						
 				}else{
 					$alert = "<span style='color:red; font-size:13px;'>Email or Password doesn't match</span>";

@@ -126,7 +126,7 @@ if(isset($_POST['binhluan_submit'])){
 						<?php
 							$login_check = Session::get('customer_login'); 
 							if($login_check){							
-								echo '<input type="submit" class="buysubmit" name="wishlist" value="Thêm vào yêu thích">';
+								echo '<input type="submit" class="buysubmit" name="wishlist" value="Add to wishlist">';
 							}else{
 								echo '';
 							}		
@@ -165,27 +165,24 @@ if(isset($_POST['binhluan_submit'])){
 				 }
 				  ?>									
 				</ul>
-
-				<?php 
-					$login_check = Session::get('customer_login'); 
-					$id = $_GET['proid'];
-					if($login_check==false){
-						echo '<p style="margin-left:20px;">Please login to comment <p>';
-					}else{
-						echo '									
-								<form action="" method="POST" class="cmt-form">
+					 <form action="" method="POST" class="cmt-form">
 									<p><input type="hidden" value="<?php echo $id ?>" name="product_id_binhluan"></p>
-									<p><textarea rows="5" style="resize: none;" placeholder="Leave a comment" class="form-control" name="binhluan"></textarea></p>
-						 			<p><?php if(isset($binhluan_insert)){
-												echo $binhluan_insert;
+									<?php 
+										$login_check = Session::get('customer_login');
+										if($login_check==false){
+											echo '<p style="margin-left:20px;">Please login to comment <p>';
+										}else{
+										echo '<p><textarea rows="5" style="resize: none;" placeholder="Leave a comment" class="form-control" name="binhluan"></textarea></p>
+										<p><?php if(isset($binhluan_insert)){
+												   echo $binhluan_insert;
+												   }
+										   ?> </p>
+										<p><input type="submit" name="binhluan_submit" class="btn btn-success" value="Comment"></p>';
 												}
-										?> </p>
-						 			<p><input type="submit" name="binhluan_submit" class="btn btn-success" value="Comment"></p>
+									?>	
+										
+									
 					 			</form>
-							';
-						
-					}
-					 ?>
 																											
 			</div>
 	    </div>
