@@ -65,14 +65,11 @@
 		
 		public function insert_customers($data){
 			$name = mysqli_real_escape_string($this->db->link, $data['name']);
-			$city = mysqli_real_escape_string($this->db->link, $data['city']);
-			$zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
 			$email = mysqli_real_escape_string($this->db->link, $data['email']);
 			$address = mysqli_real_escape_string($this->db->link, $data['address']);
-			$country = mysqli_real_escape_string($this->db->link, $data['country']);
 			$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
 			$password = mysqli_real_escape_string($this->db->link, $data['password']);
-			if($name=="" || $city=="" || $zipcode=="" || $email=="" || $address=="" || $country=="" || $phone =="" || $password ==""){
+			if($name==""|| $email=="" || $address=="" || $phone =="" || $password ==""){
 				$alert = "<span style='color:red; font-size:13px;'>Fields must be not empty</span>";
 				return $alert;
 			}else{
@@ -82,7 +79,7 @@
 					$alert = "<span style='color:red; font-size:13px;'>Email Already Existed ! Please Enter Another Email</span>";
 					return $alert;
 				}else{
-					$query = "INSERT INTO tbl_customer(name,city,zipcode,email,address,country,phone,password) VALUES('$name','$city','$zipcode','$email','$address','$country','$phone','$password')";
+					$query = "INSERT INTO tbl_customer(name,email,address,phone,password) VALUES('$name','$email','$address','$phone','$password')";
 					$result = $this->db->insert($query);
 					if($result){
 						$alert = "<span style='color:green; font-size:13px;'>Customer Created Successfully</span>";
@@ -129,16 +126,16 @@
 		}
 		public function update_customers($data, $id){
 			$name = mysqli_real_escape_string($this->db->link, $data['name']);
-			$zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
 			$email = mysqli_real_escape_string($this->db->link, $data['email']);
 			$address = mysqli_real_escape_string($this->db->link, $data['address']);
 			$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
+			$password = mysqli_real_escape_string($this->db->link, $data['password']);
 			
-			if($name=="" || $zipcode=="" || $email=="" || $address=="" || $phone ==""){
+			if($name=="" || $email=="" || $address=="" || $phone ==""|| $password ==""){
 				$alert = "<span style='color:red; font-size:13px;'>Fields must be not empty</span>";
 				return $alert;
 			}else{
-				$query = "UPDATE tbl_customer SET name='$name',zipcode='$zipcode',email='$email',address='$address',phone='$phone' WHERE id ='$id'";
+				$query = "UPDATE tbl_customer SET name='$name',email='$email',address='$address',phone='$phone',password='$password' WHERE id ='$id'";
 				$result = $this->db->insert($query);
 				if($result){
 						$alert = "<span style='color:green; font-size:13px;' >Customer Updated Successfully</span>";
@@ -150,9 +147,6 @@
 				
 			}
 		}
-		
-		
-
 
 	}
 ?>

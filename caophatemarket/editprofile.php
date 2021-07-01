@@ -20,9 +20,9 @@
     <div class="content">
     	<div class="section group">
     		<div class="content_top">
-	    		<div class="heading">
-	    		<h3>Update Profile Customers</h3>
-	    		</div>
+	    		
+				<h2 style="width: 100%;text-align: center;">Edit Profile Customers</h2>
+	    		
 	    		<div class="clear"></div>
     		</div>
 			<form action="" method="post">
@@ -48,29 +48,14 @@
 					<td>:</td>
 					<td><input type="text" name="name" value="<?php echo $result['name'] ?>"></td>
 				</tr>
-				<!-- <tr>
-					<td>City</td>
-					<td>:</td>
-					<td><input type="text" name="name" value="<?php echo $result['city'] ?>"></td>
-					
-				</tr> -->
+				
 				<tr>
 					<td>Phone</td>
 					<td>:</td>
 					<td><input type="text" name="phone" value="<?php echo $result['phone'] ?>"></td>
 				
 				</tr>
-				<!-- <tr>
-					<td>Country</td>
-					<td>:</td>
-					<td><?php echo $result['country'] ?></td>
-				</tr> -->
-				<tr>
-					<td>Zipcode</td>
-					<td>:</td>
-					<td><input type="text" name="zipcode" value="<?php echo $result['zipcode'] ?>"></td>
-					
-				</tr>
+			
 				<tr>
 					<td>Email</td>
 					<td>:</td>
@@ -81,6 +66,12 @@
 					<td>Address</td>
 					<td>:</td>
 					<td><input type="text" name="address" value="<?php echo $result['address'] ?>"></td>
+					
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td>:</td>
+					<td><input type="text" name="password" value="<?php echo $result['password'] ?>"></td>
 					
 				</tr>
 				<tr>

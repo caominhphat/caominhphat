@@ -48,7 +48,7 @@
     			echo $insertCustomers;
     		}
     		?>
-    		<form action="" method="POST">
+    		<form action="" method="POST" class="signup-form">
 		   			 <table>
 		   				<tbody>
 						<tr>
@@ -56,43 +56,29 @@
 							<div>
 							<input type="text" name="name" placeholder="Enter Name..." >
 							</div>
-							
+
 							<div>
-							   <input type="text" name="city"  placeholder="Enter City..."  >
-							</div>
-							
+		          			<input type="text" name="phone"  placeholder="Enter Phone..." >
+		          			</div>
+
 							<div>
-								<input type="text" name="zipcode"  placeholder="Enter Zipcode..."  >
-							</div>
+							<input type="text" name="address"  placeholder="Enter Address..."  >
+							</div>	  
+		    			 </td>
+
+		    			<td>						      
 							<div>
 								<input type="text" name="email"  placeholder="Enter Email..."  >
 							</div>
-		    			 </td>
-		    			<td>
-						<div>
-							<input type="text" name="address"  placeholder="Enter Address..."  >
-						</div>
-		    		<div>
-						<select  id="country" name="country" onchange="change_country(this.value)" class="frm-field required" style="width:340px;">
-							<option value="null">Select a Country</option>   
-
-							<option value="hcm">TPHCM</option>
-							<option value="na">Nghệ An</option>
-							<option value="hn">Hà Nội</option>
-							<option value="dn">Đà Nẳng</option>
-							
-
-		         </select>
-				 </div>		        
-	
-		           <div>
-		          <input type="text" name="phone"  placeholder="Enter Phone..." >
-		          </div>
 				  
-				  <div>
-					<input type="text" name="password"  placeholder="Enter Password..." >
-				</div>
-		    	</td>
+				  			<div>
+							<input type="password" name="password" style="width:100%;height:33.6px;margin-top:5px;" placeholder="Enter Password..." >
+							</div>
+
+							<div>
+							<input type="password" name="password_confirmation"  style="width:100%;height:33.6px;margin-top:10px;" placeholder="Confirm Password..." >
+							</div>
+		    			</td>
 		    </tr> 
 		    </tbody></table> 
 		   <div class="search"><div><input type="submit" name="submit" class="grey" value="Create Account"></div></div>
@@ -103,8 +89,11 @@
        <div class="clear"></div>
     </div>
  </div>
+<script type="text/javascript" src="vendor/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="vendor/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+<script src="vendor/jquery-validation-1.19.3/dist/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/script-login.js"></script>
 
 <?php 
 	include 'inc/footer.php';
-	
  ?>

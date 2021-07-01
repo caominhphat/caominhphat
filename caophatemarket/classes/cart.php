@@ -119,15 +119,16 @@ public function add_to_cart($quantity, $id){
 					$productid = $result['productId'];
 					$productName = $result['productName'];
 					$quantity = $result['quantity'];
-					$price = $result['price'] * $quantity;
+					$price = ($result['price'] * $quantity)+ ($result['price'] * $quantity)*0.1;
 					$image = $result['image'];
-					$customer_id = $customer_id;	
+					$customer_id = $customer_id;
 					$query_order = "INSERT INTO tbl_order(productId,productName,quantity,price,image,customer_id) VALUES('$productid','$productName','$quantity','$price','$image','$customer_id')";
 					$insert_order = $this->db->insert($query_order);
 				}
 			}
-		}
 
+
+		}
 		public function getAmountPrice($customer_id){
 		
 			$query = "SELECT price FROM tbl_order WHERE customer_id = '$customer_id'";
