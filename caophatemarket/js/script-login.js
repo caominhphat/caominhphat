@@ -17,22 +17,22 @@ $(".signup-form").validate({
       password: {
         required: true,
         regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
-         },
+    },
 
-        password_confirmation: {
-        required: true,
-        equalTo: "[name=password]"
-        },
-        email: {
-            required: true,
-            maxlength: 50,
-            email: true,
-            remote: "checkEmail.php",
+    password_confirmation: {
+      required: true,
+      equalTo: "[name=password1]",
+    },
+    email: {
+      required: true,
+      maxlength: 50,
+      email: true,
+      remote: "checkEmail.php",
           },
     },
   
     messages: {
-         name: {
+        name: {
         required: "Input username",
         regex: "Dont use number and special char",
         },
@@ -47,15 +47,15 @@ $(".signup-form").validate({
             required: "Input password",
             regex:"At least 8 chars, uppercase,lowercase,number,special chars",
         },
-    
         password_confirmation: {
-            required: "Re-Input password",
-            equalTo: "Password does not match",
+          required: "Re-input Password",
+          equalTo: "Password does not match",
         },
+        
         email: {
             required: "Input email",
             email: "Input right format email(a@gmail.com)",
-            remote:"Email has been existed"
+            remote:"Email has been existed",
           },
      
     },

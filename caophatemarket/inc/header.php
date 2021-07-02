@@ -45,6 +45,7 @@
 <script type="text/javascript" src="js/nav-hover.js"></script>
 <script type="text/javascript" src="js/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-4.5.0-dist/css/bootstrap.min.css"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 
@@ -118,7 +119,7 @@
 <div class="menu">
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
 	  <li><a href="?page=home">Home</a></li>
-	  <li><a href="products.php">Products</a> </li>
+	  <li><a href="?page=product&action=product">Products</a> </li>
 	  <li><a href="topbrands.php">Top Brands</a></li>
 	  <li><a href="?page=cart&action=cart">Cart</a></li>
 	  <?php

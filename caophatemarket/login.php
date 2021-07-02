@@ -31,8 +31,6 @@
         	<form action="" method="post">
                 	<input  type="text" name="email" class="field" placeholder="Enter Email..">
                     <input  type="password" name="password" class="field"  placeholder="Enter Password.." >
-                 
-                 <p class="note">If you forgot your password just enter your email and click <a href="#">here</a></p>
                     <div class="buttons"><div><input type="submit" name="login" class="grey" value="Sign In"></div></div>
              </form>
           </div>
@@ -72,11 +70,11 @@
 							</div>
 				  
 				  			<div>
-							<input type="password" name="password" style="width:100%;height:33.6px;margin-top:5px;" placeholder="Enter Password..." >
+							<input type="password" name="password1" style="width:100%;height:33.6px;margin-top:5px;" placeholder="Enter Password..." >
 							</div>
 
-							<div>
-							<input type="password" name="password_confirmation"  style="width:100%;height:33.6px;margin-top:10px;" placeholder="Confirm Password..." >
+							<div class="form-group">
+							<input class="form-control" type="password" name="password_confirmation" style="width:100%;height:33.6px;margin-top:5px;" placeholder="Confirm Password..." >					
 							</div>
 		    			</td>
 		    </tr> 

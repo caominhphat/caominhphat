@@ -97,9 +97,7 @@ class product
 			}
 	}
 
-	public function update_product($data,$files,$id){
-
-		
+		public function update_product($data,$files,$id){
 			$productName = mysqli_real_escape_string($this->db->link, $data['productName']);
 			$brand = mysqli_real_escape_string($this->db->link, $data['brand']);
 			$category = mysqli_real_escape_string($this->db->link, $data['category']);
@@ -109,7 +107,6 @@ class product
 			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
 			//Những file ảnh được phép up
 			$permited  = array('jpg', 'jpeg', 'png', 'gif');
-
 			$file_name = $_FILES['image']['name'];
 			$file_size = $_FILES['image']['size'];
 			$file_temp = $_FILES['image']['tmp_name'];
@@ -122,20 +119,17 @@ class product
 			$unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
 			$uploaded_image = "uploads/".$unique_image;
 
-
 			if($productName=="" || $brand=="" || $category=="" || $product_desc=="" || $price=="" || $type==""){
 				$alert = "<span class='error'>Các trường dữ liệu không được trống</span>";
 				return $alert;
 			}else{
 				//Nếu người dùng chọn thay đổi ảnh
-				if(!empty($file_name)){
-					
+				if(!empty($file_name)){				
 					// Nếu đuôi file ảnh ko nằm trong $permitted : png,jpeg,gif,jpg
-					if (in_array($file_ext, $permited) === false) 
-					{
+					if (in_array($file_ext, $permited) === false){
 				     // echo "<span class='error'>You can upload only:-".implode(', ', $permited)."</span>";	
-				    $alert = "<span class='success'>Bạn chỉ có thể chọn file ảnh có đuôi:-".implode(', ', $permited)."</span>";
-					return $alert;
+				    	$alert = "<span class='success'>Bạn chỉ có thể chọn file ảnh có đuôi:-".implode(', ', $permited)."</span>";
+						return $alert;
 					}
 					move_uploaded_file($file_temp,$uploaded_image);
 					$query = "UPDATE tbl_product SET
@@ -151,26 +145,22 @@ class product
 				}else{
 					//Nếu người dùng không thay đổi ảnh mới
 					$query = "UPDATE tbl_product SET
-
 					productName = '$productName',
 					brandId = '$brand',
 					catId = '$category', 
 					type = '$type', 
-					price = '$price', 
-					
+					price = '$price', 					
 					product_desc = '$product_desc'
-
-					WHERE productId = '$id'";
-					
-				}
-				$result = $this->db->update($query);
-					if($result){
-						$alert = "<span class='success'>Sửa sản phẩm thành công</span>";
-						return $alert;
-					}else{
-						$alert = "<span class='error'>Sửa sản phẩm thất bại</span>";
-						return $alert;
+					WHERE productId = '$id'";					
 					}
+			$result = $this->db->update($query);
+			if($result){
+				$alert = "<span class='success'>Sửa sản phẩm thành công</span>";
+				return $alert;
+			}else{
+				$alert = "<span class='error'>Sửa sản phẩm thất bại</span>";
+				return $alert;
+			}
 				
 			}
 
@@ -251,12 +241,12 @@ class product
 			$insert_wlist = $this->db->insert($query_insert);
 
 			if($insert_wlist){
-						$alert = "<span class='success'>Added to Wishlist Successfully</span>";
-						return $alert;
-					}else{
-						$alert = "<span class='error'>Added to Wishlist Not Success</span>";
-						return $alert;
-					}
+				$alert = "<span class='success'>Added to Wishlist Successfully</span>";
+				return $alert;
+			}else{
+				$alert = "<span class='error'>Added to Wishlist Not Success</span>";
+				return $alert;
+			}
 			}
 		}
 
@@ -269,6 +259,20 @@ class product
 		public function del_wlist($proid,$customer_id){
 			$query = "DELETE FROM tbl_wishlist where productId = '$proid' AND customer_id='$customer_id'";
 			$result = $this->db->delete($query);
+			return $result;
+		}
+
+		public function show_all_brand(){
+			$query = "SELECT *
+			FROM tbl_brand
+			order by brandId desc ";
+			$result = $this->db->select($query);
+			return $result;
+		}
+
+		public function show_all_product_of_brand($id){
+			$query = "SELECT * FROM tbl_product WHERE brandId = '$id' order by productId desc LIMIT 4 ";
+			$result = $this->db->select($query);
 			return $result;
 		}
 

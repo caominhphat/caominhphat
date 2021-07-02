@@ -4,6 +4,10 @@
 include 'inc/header.php';
 
 ?> 	
+
+
+    
+    
 <style>
 .cmt-form{
 		
@@ -48,6 +52,7 @@ textarea{
 		background-color: #A75DCF;
 		border: 1px solid #A75DCF;
 		color: #FFFFFF;
+		margin-left:20px;
 	}
 
 </style>
@@ -82,7 +87,6 @@ if(isset($_POST['binhluan_submit'])){
 ?>
 
 <!-- -------------------------------------------------------------------------------------------- -->
-
 
 
 <!-- ---------------------------------------- Main----------------------------------------------- -->
@@ -165,7 +169,8 @@ if(isset($_POST['binhluan_submit'])){
 				 }
 				  ?>									
 				</ul>
-					 <form action="" method="POST" class="cmt-form">
+
+					 <form action="" id="myform" method="POST" class="cmt-form">
 									<p><input type="hidden" value="<?php echo $id ?>" name="product_id_binhluan"></p>
 									<?php 
 										$login_check = Session::get('customer_login');
@@ -177,13 +182,16 @@ if(isset($_POST['binhluan_submit'])){
 												   echo $binhluan_insert;
 												   }
 										   ?> </p>
-										<p><input type="submit" name="binhluan_submit" class="btn btn-success" value="Comment"></p>';
+										 
+										';
 												}
 									?>	
 										
 									
 					 			</form>
-																											
+								 <p><input type="submit" name="binhluan_submit" class="btn" form ="myform" value="Comment" id="btn" onclick="return confirm('Your comment will be shown later');" >	</p> 
+								
+																									
 			</div>
 	    </div>
 				
@@ -211,6 +219,7 @@ if(isset($_POST['binhluan_submit'])){
  				</div>
  		</div>
  	</div>
+	
 	<!-- -------------------------------------------------------------------------------------------- -->
 
  <!-- ---------------------------------------- Insert footer vao web------------------------------------>
