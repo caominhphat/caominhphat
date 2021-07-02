@@ -182,13 +182,9 @@ public function add_to_cart($quantity, $id){
 
 		public function shifted_confirm($id){
 			$id = mysqli_real_escape_string($this->db->link, $id);
-			$query = "UPDATE tbl_order SET
-
-					status = '2'
-
-					WHERE id = '$id' ";
-			$result = $this->db->update($query);
-			return $result;
+			$query = "DELETE FROM tbl_order WHERE id = '$id'";
+			$result = $this->db->delete($query);
+			
 		}
 
 

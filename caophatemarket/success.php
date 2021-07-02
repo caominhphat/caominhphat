@@ -33,8 +33,8 @@ p.success_note {
 			?>
 			<p class="success_note">Total bill : <?php
 
-			$vat = $amount * 0.1;
-			$total = $vat + $amount;
+			
+			$total = $amount;
 			echo $fm->format_currency($total). ' VNĐ';
 
 

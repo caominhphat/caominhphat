@@ -68,8 +68,6 @@
 									<span>Shifting</span>
 									
 									<?php
-									}elseif($result['status']==2){
-										echo 'Received';
 									}
 
 									 ?>

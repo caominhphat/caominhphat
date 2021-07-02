@@ -26,7 +26,7 @@ body{
 	background:url(../images/body_bg3.jpg);
 }
 .wrap{
-	width:78%;
+	width:100%;
 	margin:0 auto;
 	padding:0 1%;
 	background:#FFF;
@@ -39,13 +39,13 @@ body{
 }
 .logo{
 	float:left;
-	width:33%;
+	width: 30%;
 }
 /**** Header Top Right ****/
 .header_top_right{
 	float:left;
-	width:67%;
-	margin-top:35px;
+	width:70%;
+	margin-top:12%;
 }
 .search_box{
 	float:left;
@@ -604,15 +604,12 @@ p.note{
 	margin: 1% 0 1% 1.6%;
 	box-shadow: 0px 0px 3px rgb(150, 150, 150);
 }
-.grid_1_of_4:first-child { 
-	margin-left: 0; 
 
-} 
-.grid_1_of_4:nth-child(5) { 
+.grid_1_of_4:nth-child(2n+3)  { 
 	margin-left: 0; 
-	padding:0;
-
 } 
+
+
 .images_1_of_4 {
 	width: 20.8%;
 	padding:1.5%;

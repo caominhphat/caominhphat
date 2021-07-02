@@ -59,15 +59,17 @@
 </script>
 </head>
 <body>
-  <div class="wrap">
+  <div style="width:100%" class="wrap">
 		<div class="header_top">
 			<div class="logo">
-				<a href=""><img src="images/logo_web.png" alt="" /></a>
+				<a href=""><img style="height: 30%;" src="images/logo_web.png" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
-			    <div class="search_box">
-				    <form>
-				    	<input type="text" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
+			  <div style="transform: translate(15%, 0);">
+			  <div class="search_box">
+				    <form action="?page=search&action=search" method="POST">
+					<input type="text" placeholder="Search for products" name="tukhoa">
+				    	<input type="submit" name="search_product" value="Tìm kiếm"> 
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
@@ -86,7 +88,6 @@
 											}else{
 											echo 'Empty';
 										}
-
 									?>
 								</span>
 							</a>
@@ -100,7 +101,7 @@
 					// $delCompare = $ct->del_compare($customer_id);
 					Session::destroy();
 				}
-			?>
+				?>
 		   <div class="login">
 		   <?php
 			$login_check = Session::get('customer_login'); 
@@ -110,8 +111,10 @@
 				echo '<a href="?customer_id='.Session::get('customer_id').'">Logout</a></div>';
 			}
 			?>
-
+				
 		   </div>
+			  </div>
+			   
 		 <div class="clear"></div>
 	 </div>
 	 <div class="clear"></div>

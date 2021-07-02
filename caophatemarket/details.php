@@ -34,6 +34,18 @@ textarea{
 	.comment ul li:first-child{
 		margin-top:20px;
 	}
+	.comment ul li{
+		display:inline-block;
+		border: 1px solid black;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+		padding:5px;
+		width: 440px;
+	}
+
+	
 	ul{
 		margin-left: 20px;
 		margin-right: 20px;
@@ -52,7 +64,6 @@ textarea{
 		background-color: #A75DCF;
 		border: 1px solid #A75DCF;
 		color: #FFFFFF;
-		margin-left:20px;
 	}
 
 </style>
@@ -178,10 +189,7 @@ if(isset($_POST['binhluan_submit'])){
 											echo '<p style="margin-left:20px;">Please login to comment <p>';
 										}else{
 										echo '<p><textarea rows="5" style="resize: none;" placeholder="Leave a comment" class="form-control" name="binhluan"></textarea></p>
-										<p><?php if(isset($binhluan_insert)){
-												   echo $binhluan_insert;
-												   }
-										   ?> </p>
+										   <p><input type="submit" name="binhluan_submit" class="btn" form ="myform" value="Comment" id="btn" onclick="return confirm("Your comment will be shown later");" >	</p> 
 										 
 										';
 												}
@@ -189,7 +197,7 @@ if(isset($_POST['binhluan_submit'])){
 										
 									
 					 			</form>
-								 <p><input type="submit" name="binhluan_submit" class="btn" form ="myform" value="Comment" id="btn" onclick="return confirm('Your comment will be shown later');" >	</p> 
+								 
 								
 																									
 			</div>
