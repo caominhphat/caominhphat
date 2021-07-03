@@ -7,10 +7,10 @@
                         <li><a href="titleslogan.php">Title & Slogan</a></li>
                         <li><a href="social.php">Social Media</a></li>
                         <li><a href="copyright.php">Copyright</a></li>
-                        
+
                     </ul>
                 </li>
-				
+
                  <li><a class="menuitem">Update Pages</a>
                     <ul class="submenu">
                         <li><a>About Us</a></li>

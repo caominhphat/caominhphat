@@ -3,49 +3,44 @@
 <?php include '../classes/category.php';?>
 <?php
 
- $cat = new category();
- if(!isset($_GET['catid']) || $_GET['catid'] == NULL){
-    echo"<script>window.location = 'catlist.php' ; </script>";
- }else{
+$cat = new category();
+if (!isset($_GET['catid']) || $_GET['catid'] == null) {
+    echo "<script>window.location = 'catlist.php' ; </script>";
+} else {
     $id = $_GET['catid'];
- }
+}
 
- if($_SERVER['REQUEST_METHOD'] === 'POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Take value of adminUser and adminPass from form after click login
     $catName = $_POST['catName'];
-    $updateCat = $cat->update_category($catName, $id);  
-
- }
-
- ?>
+    $updateCat = $cat->update_category($catName, $id);
+}
+?>
 
         <div class="grid_10">
             <div class="box round first grid">
                 <h2>Sửa danh mục</h2>
 
-               <div class="block copyblock"> 
-                <?php 
-                if(isset($updateCat)){
-                    echo $updateCat;
-                }
+               <div class="block copyblock">
+                <?php
+                    if (isset($updateCat)) {
+                        echo $updateCat;
+                    }
                 ?>
 
                 <?php
                     $get_cate_name = $cat->getcatbyId($id);
-                    if($get_cate_name){
-                        while($result = $get_cate_name->fetch_assoc() ){
-
-                        
-
+                    if ($get_cate_name) {
+                        while ($result = $get_cate_name->fetch_assoc()) {
                 ?>
                  <form action="" method="POST">
-                    <table class="form">					
+                    <table class="form">
                         <tr>
                             <td>
                                 <input type="text" value = "<?php echo $result['catName'] ?>" name="catName" placeholder="Sửa tên danh mục" class="medium" />
                             </td>
                         </tr>
-						<tr> 
+						<tr>
                             <td>
                                 <input type="submit" name="submit" Value="Edit" />
                             </td>
@@ -53,8 +48,8 @@
                     </table>
                     </form>
                     <?php
+                            }
                         }
-                    }
                     ?>
                 </div>
             </div>

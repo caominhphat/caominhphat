@@ -87,7 +87,7 @@ include 'inc/header.php';
 
 									echo $fm->format_currency($subtotal)." "."VNĐ";
 									//Tạo ra biến sum có giá trị bằng $subtotal trong 1 phiên làm việc xác định
-									Session::set('sum',$subtotal);
+									
 									Session::set('qty',$qty);
 								?></td>
                     </tr>
@@ -101,6 +101,7 @@ include 'inc/header.php';
 								$vat = $subtotal * 0.1;
 								$gtotal = $subtotal + $vat;
 								echo $fm->format_currency($gtotal)." "."VNĐ";
+                                Session::set('sum',$gtotal);
 								?></td>
                     </tr>
                 </table>

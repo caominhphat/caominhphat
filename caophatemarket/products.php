@@ -34,7 +34,7 @@ if ($get_all_brand) {
 				
 		?>
 				<div class="grid_1_of_4 images_1_of_4">
-					<a href="?page=details&action=detailscreen&proid=<?php echo $result1['productId'] ?>"><img style="height:300px;" src="admin/uploads/<?php echo $result1['image'] ?>" width="150px" alt="" /></a>
+					<a href="?page=details&action=detailscreen&proid=<?php echo $result1['productId'] ?>"><img style="width: 250px;height:250px;" src="admin/uploads/<?php echo $result1['image'] ?>" width="150px" alt="" /></a>
 					 <h2><?php echo $result1['productName'] ?></h2>
 					 <p><span class="price"><?php echo $fm->format_currency($result1['price'])." "."VNĐ" ?></span></p>
 					 <div class="button"><span><a href="?page=details&action=detailscreen&proid=<?php echo $result1['productId'] ?>" class="details">Chi tiết</a></span></div>

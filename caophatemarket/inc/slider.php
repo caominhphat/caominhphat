@@ -8,7 +8,7 @@
 				 ?>
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						 <a href="?page=details&action=detailscreen&proid=<?php echo $resultdell['productId'] ?>"> <img src="admin/uploads/<?php echo $resultdell['image'] ?>" alt="" /></a>
+						 <a href="?page=details&action=detailscreen&proid=<?php echo $resultdell['productId'] ?>"> <img style="width: 150px;height:150px;" src="admin/uploads/<?php echo $resultdell['image'] ?>" alt="" /></a>
 					</div>
 				    <div class="text list_2_of_1">
 						<h2>DELL</h2>
@@ -29,7 +29,7 @@
 
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						  <a href="?page=details&action=detailscreen&proid=<?php echo $resultss['productId'] ?>"><img src="admin/uploads/<?php echo $resultss['image'] ?>" alt="" /></a>
+						  <a href="?page=details&action=detailscreen&proid=<?php echo $resultss['productId'] ?>"><img style="width: 150px;height:150px;" src="admin/uploads/<?php echo $resultss['image'] ?>" alt="" /></a>
 					</div>
 					<div class="text list_2_of_1">
 						  <h2>Samsung</h2>
@@ -52,7 +52,7 @@
 				 ?>	
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						 <a href="?page=details&action=detailscreen&proid=<?php echo $resultap['productId'] ?>"> <img src="admin/uploads/<?php echo $resultap['image'] ?>" alt="" /></a>
+						 <a href="?page=details&action=detailscreen&proid=<?php echo $resultap['productId'] ?>"> <img style="width: 150px;height:150px;" src="admin/uploads/<?php echo $resultap['image'] ?>" alt="" /></a>
 					</div>
 				    <div class="text list_2_of_1">
 						<h2>Oppo</h2>
@@ -72,7 +72,7 @@
 				 ?>
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						  <a href="?page=details&action=detailscreen&proid=<?php echo $resulthw['productId'] ?>"><img src="admin/uploads/<?php echo $resulthw['image'] ?>" alt="" /></a>
+						  <a href="?page=details&action=detailscreen&proid=<?php echo $resulthw['productId'] ?>"><img style="width: 150px;height:150px;" src="admin/uploads/<?php echo $resulthw['image'] ?>" alt="" /></a>
 					</div>
 					<div class="text list_2_of_1">
 						  <h2>Huawei</h2>

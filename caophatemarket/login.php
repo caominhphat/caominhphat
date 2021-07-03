@@ -30,7 +30,7 @@
 			<!-- Sign in -->
         	<form action="" method="post">
                 	<input  type="text" name="email" class="field" placeholder="Enter Email..">
-                    <input  type="password" name="password" class="field"  placeholder="Enter Password.." >
+                    <input  type="password" name="password1" class="field"  placeholder="Enter Password.." >
                     <div class="buttons"><div><input type="submit" name="login" class="grey" value="Sign In"></div></div>
              </form>
           </div>
@@ -70,7 +70,7 @@
 							</div>
 				  
 				  			<div>
-							<input type="password" name="password1" style="width:100%;height:33.6px;margin-top:5px;" placeholder="Enter Password..." >
+							<input type="password" name="password" style="width:100%;height:33.6px;margin-top:5px;" placeholder="Enter Password..." >
 							</div>
 
 							<div class="form-group">

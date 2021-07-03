@@ -123,7 +123,6 @@
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
 	  <li><a href="?page=home">Home</a></li>
 	  <li><a href="?page=product&action=product">Products</a> </li>
-	  <li><a href="topbrands.php">Top Brands</a></li>
 	  <li><a href="?page=cart&action=cart">Cart</a></li>
 	  <?php
 			$login_check = Session::get('customer_login'); 

@@ -79,7 +79,8 @@ include_once ($filepath.'/../helpers/format.php');
 							</td>
 						</tr>
 						<?php
-					}}
+								}
+							}
 						?>
 					</tbody>
 				</table>

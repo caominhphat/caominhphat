@@ -1,15 +1,15 @@
 <?php
-include'../lib/session.php';
+include '../lib/session.php';
 // Nếu không có checkSession , 1 người có được đường dẫn trang admin thì sẽ vào đc trang admin
 // checkSession giúp kiểm tra nếu user and passwỏd đúng thì mới tạo session -> mới có thể chuyển hướng sang trang index
 Session::checkSession();
 ?>
 
 <?php
-  header("Cache-Control: no-cache, must-revalidate");
-  header("Pragma: no-cache"); 
-  header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
-  header("Cache-Control: max-age=2592000");
+header("Cache-Control: no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
+header("Cache-Control: max-age=2592000");
 ?>
 
 <!DOCTYPE html>
@@ -61,13 +61,12 @@ Session::checkSession();
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
                             <!-- Session::get('adminName') :gắn tên admin cho dòng hello -->
-                            <li>Hello <?php echo Session::get('adminName')?></li>
+                            <li>Hello <?php echo Session::get('adminName') ?></li>
 
                             <!-- logout tài khoản admin , nếu xuất hiện href action = logout thì sẽ hủy session hiện tại -->
                             <?php
-                            if(isset($_GET['action']) && $_GET['action'] == 'logout'){
-                                Session::destroy();
-
+                            if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+                             Session::destroy();
                             }
                             ?>
 
@@ -92,4 +91,3 @@ Session::checkSession();
         </div>
         <div class="clear">
         </div>
-    

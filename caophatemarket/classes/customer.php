@@ -93,7 +93,7 @@
 		}
 		public function login_customers($data){
 			$email = mysqli_real_escape_string($this->db->link, $data['email']);
-			$password = mysqli_real_escape_string($this->db->link, $data['password']);
+			$password = mysqli_real_escape_string($this->db->link, $data['password1']);
 			if($email=='' || $password==''){
 				$alert = "<span style='color:red; font-size:13px;'>Password and Email must be not empty</span>";
 				return $alert;

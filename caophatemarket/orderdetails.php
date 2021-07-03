@@ -32,6 +32,9 @@
 		border-top-right-radius: 10px;
 		border-top-left-radius: 10px;
 	}
+	.btn:hover{
+		transform: scale(1.2);
+	}
 </style>
  <div class="main">
     <div class="content">

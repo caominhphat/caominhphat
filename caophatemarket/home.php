@@ -23,7 +23,7 @@ include 'inc/slider.php';
 	      			
 	      	?>
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="?page=details&action=detailscreen&proid=<?php echo $result['productId'] ?>"><img style="height:300px;" src="admin/uploads/<?php echo $result['image'] ?>" width="150px" alt="" /></a>
+					 <a href="?page=details&action=detailscreen&proid=<?php echo $result['productId'] ?>"><img style="width: 250px;height:250px;" src="admin/uploads/<?php echo $result['image'] ?>" width="150px" alt="" /></a>
 					 <h2><?php echo $result['productName'] ?></h2>
 					 
 					 <p><span class="price"><?php echo $fm->format_currency($result['price'])." "."VNĐ" ?></span></p>
@@ -49,7 +49,7 @@ include 'inc/slider.php';
 
 	      		?>
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="?page=details&action=detailscreen&proid=<?php echo $result_new['productId'] ?>"><img  style="height:300px;" src="admin/uploads/<?php echo $result_new['image'] ?>" alt="" /></a>
+					 <a href="?page=details&action=detailscreen&proid=<?php echo $result_new['productId'] ?>"><img  style="width: 250px;height:250px;" src="admin/uploads/<?php echo $result_new['image'] ?>" alt="" /></a>
 					 <h2><?php echo $result_new['productName'] ?></h2>
 					
 					 <p><span class="price"><?php echo $fm->format_currency($result_new['price'])." "."VNĐ" ?></span></p>

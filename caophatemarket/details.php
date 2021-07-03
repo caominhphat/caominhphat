@@ -43,6 +43,7 @@ textarea{
 		border-top-left-radius: 10px;
 		padding:5px;
 		width: 440px;
+		margin-top:20px;
 	}
 
 	
@@ -112,7 +113,7 @@ if(isset($_POST['binhluan_submit'])){
     		?>
 				<div class="cont-desc span_1_of_2">				
 					<div class="grid images_3_of_2">
-						<img  style="width: 250px;" src="admin/uploads/<?php echo $result_details['image'] ?>" alt="" />
+						<img  style="width: 250px;height:250px;" src="admin/uploads/<?php echo $result_details['image'] ?>" alt="" />
 					</div>
 				<div class="desc span_3_of_2">
 					<h2><?php echo $result_details['productName'] ?></h2>
@@ -189,8 +190,7 @@ if(isset($_POST['binhluan_submit'])){
 											echo '<p style="margin-left:20px;">Please login to comment <p>';
 										}else{
 										echo '<p><textarea rows="5" style="resize: none;" placeholder="Leave a comment" class="form-control" name="binhluan"></textarea></p>
-										   <p><input type="submit" name="binhluan_submit" class="btn" form ="myform" value="Comment" id="btn" onclick="return confirm("Your comment will be shown later");" >	</p> 
-										 
+										   <p><input type="submit" name="binhluan_submit" class="btn" form ="myform" value="Comment" id="btn" onclick="return confirm("Are you sure?");">	</p> 	 
 										';
 												}
 									?>	

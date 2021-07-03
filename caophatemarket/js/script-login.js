@@ -11,24 +11,27 @@ $(".signup-form").validate({
         regex: /^0([0-9]{9,9})$/,
         maxlength: 11,
       },
+
       address: {
         required: true,
       },
+
       password: {
         required: true,
         regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
-    },
+      },
 
-    password_confirmation: {
+      password_confirmation: {
       required: true,
-      equalTo: "[name=password1]",
-    },
-    email: {
+      equalTo: "[name=password]",
+      },
+
+      email: {
       required: true,
       maxlength: 50,
       email: true,
       remote: "checkEmail.php",
-          },
+      },
     },
   
     messages: {
@@ -36,17 +39,21 @@ $(".signup-form").validate({
         required: "Input username",
         regex: "Dont use number and special char",
         },
-         phone: {
+
+        phone: {
         required: 'Input number',
         regex: 'Input 11 numbers with 0 first',
         },
+
         address: {
             required: 'Input address',
         },
+
         password: {
-            required: "Input password",
-            regex:"At least 8 chars, uppercase,lowercase,number,special chars",
+          required: "Input password",
+          regex:"At least 8 chars,1 number, 1 special char,1 Uppercase",
         },
+
         password_confirmation: {
           required: "Re-input Password",
           equalTo: "Password does not match",
