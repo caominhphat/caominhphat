@@ -9,6 +9,9 @@
        $customer_id = Session::get('customer_id');
        $insertOrder = $ct->insertOrder($customer_id);
        $delCart = $ct->del_all_data_cart();
+
+	   $id = Session::get('customer_id');
+	   $get_customers = $cs->get_mail($id);	   
        header('Location:?page=payment&action=success');
     }
     

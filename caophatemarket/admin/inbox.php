@@ -72,15 +72,10 @@ include_once ($filepath.'/../helpers/format.php');
 								echo 'Shifting..';
 								?>
 							<?php
-							}elseif($result['status']==2){
+							}
 							?>
 
-							<a href="?delid=<?php echo $result['id'] ?>">Remove</a>
-
-							<?php
-								}
 							
-							?>
 							</td>
 						</tr>
 						<?php

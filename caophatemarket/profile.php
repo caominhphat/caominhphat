@@ -28,6 +28,7 @@
 			
 			<table class="tblone">
 				<?php
+				
 				$id = Session::get('customer_id');
 				$get_customers = $cs->show_customers($id);
 				if($get_customers){

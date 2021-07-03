@@ -46,6 +46,7 @@ p.success_note {
 
  </div>
 </form>
+
 <?php 
 	include 'inc/footer.php';
 	

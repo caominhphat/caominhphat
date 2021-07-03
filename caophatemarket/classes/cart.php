@@ -137,6 +137,11 @@ public function add_to_cart($quantity, $id){
 		}
 
 		public function get_cart_ordered($customer_id){
+			$query = "SELECT * FROM tbl_order WHERE customer_id = '$customer_id' AND status = 0";
+			$get_cart_ordered = $this->db->select($query);
+			return $get_cart_ordered;
+		}
+		public function get_cart_ordered_1($customer_id){
 			$query = "SELECT * FROM tbl_order WHERE customer_id = '$customer_id'";
 			$get_cart_ordered = $this->db->select($query);
 			return $get_cart_ordered;

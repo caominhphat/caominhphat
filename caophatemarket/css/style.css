@@ -45,7 +45,7 @@ body{
 .header_top_right{
 	float:left;
 	width:70%;
-	margin-top:12%;
+	margin-top:7%;
 }
 .search_box{
 	float:left;
@@ -936,7 +936,7 @@ p.note{
 .span_3_of_2  h2 {
 	font-family: 'Monda', sans-serif;
 	font-size:1.1em;
-	color: #CC3636;
+	color: #000080;
 	font-weight : normal;
 	margin-top: 0px;
 	text-transform:uppercase;
@@ -957,7 +957,7 @@ p.note{
 .price p span{
 	font-size:1.5em;
 	font-family: 'Monda', sans-serif;
-	color: #CC3636;
+	color: #000080;
 }
 .available{
 	padding:10px 0;

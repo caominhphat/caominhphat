@@ -62,7 +62,7 @@
   <div style="width:100%" class="wrap">
 		<div class="header_top">
 			<div class="logo">
-				<a href=""><img style="height: 30%;" src="images/logo_web.png" alt="" /></a>
+				<a href=""><img style="height: 150px;width:350px;" src="images/logo_web.png" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
 			  <div style="transform: translate(15%, 0);">

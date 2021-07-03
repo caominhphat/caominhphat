@@ -46,35 +46,14 @@ include_once ($filepath.'/../helpers/format.php');
                             <td>
                                 <?php echo $result['phone'] ?>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>City</td>
-                            <td>:</td>
-                            <td>
-                               <?php echo $result['city'] ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Country</td>
-                            <td>:</td>
-                            <td>
-                               <?php echo $result['country'] ?>
-                            </td>
-                        </tr>
+                        </tr>                                            
                          <tr>
                             <td>Address</td>
                             <td>:</td>
                             <td>
                                <?php echo $result['address'] ?>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Zipcode</td>
-                            <td>:</td>
-                            <td>
-                                <?php echo $result['zipcode'] ?>
-                            </td>
-                        </tr>
+                        </tr>                     
                         <tr>
                             <td>Email</td>
                             <td>:</td>

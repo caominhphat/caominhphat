@@ -18,6 +18,21 @@
      	$shifted_confirm = $ct->shifted_confirm($id);
     }
 ?>
+<style>
+	.btn{
+		display:inline-block;
+		height:60px;
+		background-color: #CD853F;
+		font-size: 20px;
+		color: white;
+		border: #CD853F;
+		font-weight: bold;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+	}
+</style>
  <div class="main">
     <div class="content">
     	<div class="cartoption">		
@@ -37,7 +52,7 @@
 							</tr>
 							<?php
 							$customer_id = Session::get('customer_id');
-							$get_cart_ordered = $ct->get_cart_ordered($customer_id);
+							$get_cart_ordered = $ct->get_cart_ordered_1($customer_id);
 							if($get_cart_ordered){
 								$i = 0;
 								$qty = 0;
@@ -99,23 +114,22 @@
 						?>
 							
 						</table>
-						
-						
-					 
-					
-					
 					</div>
 					<div class="shopping" style="width: 100%;text-align: center;">
 						<div class="shopleft" style="width: 100%">
 							<a href="?page=home" style="display: inline-block;"> <img src="images/shop.png" alt="" /></a>
-						</div>
-						
+						</div>	
+						<div>
+						<form action="?page=sendmail&action=sendmail" method="POST">
+								<input type="submit" id="sendMail" value="Receive Your Order Bill On Email" class="btn">
+						</form>
+						</div>					
 					</div>
     	</div>  	
        <div class="clear"></div>
     </div>
  </div>
+ <script src="js/sendmail.js"></script>
 <?php 
-	include 'inc/footer.php';
-	
+	include 'inc/footer.php';	
  ?>
