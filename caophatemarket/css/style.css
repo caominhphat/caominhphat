@@ -28,7 +28,7 @@ body{
 .wrap{
 	width:100%;
 	margin:0 auto;
-	padding:0 1%;
+	padding:0;
 	background:#FFF;
 }
 .header{
@@ -752,6 +752,8 @@ p.note{
 	background: linear-gradient(to bottom,  #414045 55%,#2f2e33 100%); 
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414045', endColorstr='#2f2e33',GradientType=0 );
 	box-shadow: inset 0px 1px 8px #222;
+	max-width: 1300px;
+	margin: auto;
 }
 .section {
 	clear: both;

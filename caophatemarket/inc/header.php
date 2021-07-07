@@ -59,13 +59,14 @@
 </script>
 </head>
 <body>
+<div style="max-width: 1300px;margin-left: auto;margin-right: auto;">
   <div style="width:100%" class="wrap">
 		<div class="header_top">
 			<div class="logo">
-				<a href=""><img style="height: 150px;width:350px;" src="images/logo_web.png" alt="" /></a>
+				<a href=""><img style="height: 150px;max-width:350px;" src="images/logo_web.png" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
-			  <div style="transform: translate(15%, 0);">
+			  <div style="transform: translate(5%, 0);">
 			  <div class="search_box">
 				    <form action="?page=search&action=search" method="POST">
 					<input type="text" placeholder="Search for products" name="tukhoa">
@@ -74,7 +75,7 @@
 			    </div>
 			    <div class="shopping_cart">
 					<div class="cart">
-						<a href="#" title="View my shopping cart" rel="nofollow">
+						<a href="?page=cart&action=cart" title="View my shopping cart" rel="nofollow">
 								<span class="cart_title">Cart</span>
 								<span class="no_product">
 									
@@ -106,9 +107,9 @@
 		   <?php
 			$login_check = Session::get('customer_login'); 
 			if($login_check==false){
-				echo '<a href="?page=login&action=login">Login</a></div>';
+				echo '<a href="?page=login&action=login" style="font-size:16px;text-align:center;line-height:35px;">Login</a></div>';
 			}else{
-				echo '<a href="?customer_id='.Session::get('customer_id').'">Logout</a></div>';
+				echo '<a href="?customer_id='.Session::get('customer_id').'" style="font-size:16px;text-align:center;line-height:35px;">Logout</a></div>';
 			}
 			?>
 				

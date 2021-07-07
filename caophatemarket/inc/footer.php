@@ -1,7 +1,7 @@
 </div>
 
 <!-- ----------------------------------------------footer--------------------------- -->
-   <div class="footer">
+   <div class="footer" style="max-witdh:1300px;">
    	  <div class="wrapper">	
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
@@ -91,5 +91,6 @@
 		  });
 		});
 	  </script>
+	  </div>
 </body>
 </html>

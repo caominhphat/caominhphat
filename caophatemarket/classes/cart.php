@@ -131,7 +131,7 @@ public function add_to_cart($quantity, $id){
 		}
 		public function getAmountPrice($customer_id){
 		
-			$query = "SELECT price FROM tbl_order WHERE customer_id = '$customer_id'";
+			$query = "SELECT price FROM tbl_order WHERE customer_id = '$customer_id' AND status = 0";
 			$get_price = $this->db->select($query);
 			return $get_price;
 		}
