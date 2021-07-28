@@ -1,6 +1,9 @@
+
+
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
 ol,ul{list-style:none;margin:0;padding:0;}
+.section.group{padding: 20px;}
 blockquote,q{quotes:none;}
 blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
 table{border-collapse:collapse;border-spacing:0;}
@@ -640,7 +643,13 @@ p.note{
 .grid_1_of_4:nth-child(41)  { 
 	margin-left: 0; 
 } 
-.grid_1_of_4:nth-child(44)  { 
+.grid_1_of_4:nth-child(45)  { 
+	margin-left: 0; 
+} 
+.grid_1_of_4:nth-child(49)  { 
+	margin-left: 0; 
+} 
+.grid_1_of_4:nth-child(53)  { 
 	margin-left: 0; 
 } 
 
@@ -2519,4 +2528,68 @@ p.terms {
 }
 .grid_1_of_4:nth-child(5) {
     margin-left: 0;
+}
+
+.box{
+	position: relative;
+	
+}
+
+.box .overlay{
+	display: inline-block;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%) scale(0);
+	transition: transform 0.3s ease-in-out;
+}
+
+.box:hover .overlay {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.box .overlay a{
+	color: white;
+	display: inline-block;
+	background-color: black;
+	margin-bottom: 4px;
+	padding: 5px 10px 5px 10px;
+}
+.box .overlay a:hover{
+	background-color: red;
+	transform: scale(1.2);
+	opacity: 0.8;	
+}
+
+.box .overlay input{
+	background-color: black;
+	color: white;
+		
+}
+
+.box .overlay input:hover{
+	background-color: red;
+	transform: scale(1.2);
+	opacity: 0.8;	
+}
+
+.box .overlay a:first-child{
+	display:block;	
+}
+
+div.menu{
+	position: sticky;
+	top:0px;
+	z-index: 1;
+	
+}
+
+.signup-form label{
+    color:red; 
+    font-size:13px;
+    display: block;
+}
+
+ul.dc_mm-orange{
+	margin-left: 0px;
 }

@@ -1,10 +1,10 @@
- <style>
-.not_found {
-    font-size: 30px;
-    font-weight: bold;
-    color: red;
-}
- </style>
+<style>
+    .not_found {
+        font-size: 30px;
+        font-weight: bold;
+        color: red;
+    }
+</style>
  <div class="main">
      <div class="content">
          <div class="cartoption">
@@ -13,7 +13,6 @@
                      <h3>Page Not Found</h3>
                  </div>
              </div>
-
          </div>
          <div class="clear"></div>
      </div>

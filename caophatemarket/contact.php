@@ -49,13 +49,13 @@ include 'inc/header.php';
 				<div class="col span_1_of_3">
       			<div class="company_address">
 				     	<h2>Company Information :</h2>
-						    	<p>500 Lorem Ipsum Dolor Sit,</p>
-						   		<p>22-56-2-9 Sit Amet, Lorem,</p>
-						   		<p>USA</p>
+						    	<p>1 Nguyen Hue</p>
+						   		<p>district 1</p>
+						   		<p>VietNam</p>
 				   		<p>Phone:(00) 222 666 444</p>
 				   		<p>Fax: (000) 000 00 00 0</p>
-				 	 	<p>Email: <span>info@mycompany.com</span></p>
-				   		<p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
+				 	 	<p>Email: <span>caophat2713@gmail.com</span></p>
+				   		<p>Follow on: <span><a href="https://www.facebook.com/phat.caominh.39/">Facebook</a></span>, <span>Twitter</span></p>
 				   </div>
 				 </div>
 			  </div>    	

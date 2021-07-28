@@ -1,23 +1,16 @@
 <?php
-include '../classes/adminlogin.php';
+	include '../classes/adminlogin.php';
 ?>
-
- <?php
-
- $class = new adminlogin();
-
- // if this form use post method then do
- if($_SERVER['REQUEST_METHOD'] === 'POST'){
- 	// Take value of adminUser and adminPass from form after click login
- 	$adminUser = $_POST['adminUser'];
- 	$adminPass = md5($_POST['adminPass']);
-
- 	$login_check = $class->login_admin($adminUser,$adminPass);	
-
- }
- ?>
-
-
+<?php
+	$class = new adminlogin();
+	// if this form use post method then do
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		// Take value of adminUser and adminPass from form after click login
+		$adminUser = $_POST['adminUser'];
+		$adminPass = md5($_POST['adminPass']);
+		$login_check = $class->login_admin($adminUser, $adminPass);
+	}
+?>
 
 <!DOCTYPE html>
 <head>
@@ -39,14 +32,15 @@ include '../classes/adminlogin.php';
 			<div>
 				<input type="submit" value="Log in" />
 			</div>
-			<div><span style="color: red">
-				<?php
-				if(isset($login_check)){
-					echo $login_check;
-				}
-				?>
-			</span></div>
-			
+			<div>
+				<span style="color: red">
+					<?php
+						if (isset($login_check)) {
+							echo $login_check;
+						}
+					?>
+				</span>
+			</div>
 		</form><!-- form -->
 		<div class="button">
 			<a href="#">Admin Page</a>

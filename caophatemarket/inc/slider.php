@@ -13,7 +13,7 @@
 				    <div class="text list_2_of_1">
 						<h2>DELL</h2>
 						 <p><?php echo $resultdell['productName'] ?></p>
-						<div class="button"><span><a href="?page=details&action=detailscreen&proid=<?php echo $resultdell['productId'] ?>">Chi tiết</a></span></div>
+						
 				   </div>
 			   </div>		
 			    <?php
@@ -34,7 +34,7 @@
 					<div class="text list_2_of_1">
 						  <h2>Samsung</h2>
 						   <p><?php echo $resultss['productName'] ?></p>
-						 <div class="button"><span><a href="?page=details&action=detailscreen&proid=<?php echo $resultss['productId'] ?>">Chi tiết</a></span></div>
+						 
 					</div>
 				</div>
 				 <?php
@@ -57,7 +57,7 @@
 				    <div class="text list_2_of_1">
 						<h2>Oppo</h2>
 						 <p><?php echo $resultap['productName'] ?></p>
-						<div class="button"><span><a href="?page=details&action=detailscreen&proid=<?php echo $resultap['productId'] ?>">Chi tiết</a></span></div>
+						
 				   </div>
 			   </div>	
 			    <?php
@@ -77,7 +77,7 @@
 					<div class="text list_2_of_1">
 						  <h2>Huawei</h2>
 						   <p><?php echo $resulthw['productName'] ?></p>
-						  <div class="button"><span><a href="?page=details&action=detailscreen&proid=<?php echo $resulthw['productId'] ?>">Chi tiết</a></span></div>
+						  
 					</div>
 				</div>
 				   <?php

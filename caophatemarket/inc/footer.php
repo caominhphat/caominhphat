@@ -53,7 +53,7 @@
 				</div>
 			</div>
 			<div class="copy_right">
-				<p>Training with live project &amp; All rights Reseverd </p>
+				<p>caominhphat; All rights Reseverd </p>
 		   </div>
      </div>
     </div>

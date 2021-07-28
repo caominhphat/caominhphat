@@ -82,6 +82,8 @@ $(window).load(function(){
 		});
 		
 	},100);
+	
+	
 
 	// This function takes an image and renders
 	// a version of it similar to the Overlay blending

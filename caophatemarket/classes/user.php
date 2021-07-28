@@ -18,9 +18,5 @@ class user
 		$this->db = new Database();
 		$this->fm = new Format();
 	}
-
-	
-
-
 }
 ?>
