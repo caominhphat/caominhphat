@@ -11,11 +11,10 @@
                     }
                 }
                 $ct = new cart();
-                if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['addcart'])) {
+                if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                     $id = $_POST['id'];
                     $quantity = $_POST['quantity'];
                     $insertCart = $ct->add_to_cart($quantity, $id);
-                    header('Location:?page=cart&action=cart');
                 }
                 require 'search.php';
             }

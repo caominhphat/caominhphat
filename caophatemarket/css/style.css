@@ -415,7 +415,7 @@ p.note{
     z-index:11;
     background:#70389C;
 }
-.header_bottom{margin-bottom:10px;}
+.header_bottom{margin-bottom:20px;}
 /**** Header Botttom Left ****/
 .header_bottom_left{
 	float:left;
@@ -2592,4 +2592,21 @@ div.menu{
 
 ul.dc_mm-orange{
 	margin-left: 0px;
+}
+
+.update_input{
+	display: block;
+	margin:auto;
+}
+
+.update_input ~ label{
+	color:red; 
+    font-size:13px;
+    display: block;
+}
+
+.slider{
+	width: 637px;
+	height: 380px;
+	padding-top: 10px;
 }

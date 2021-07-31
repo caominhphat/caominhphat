@@ -8,15 +8,6 @@
     spl_autoload_register(function ($class) {
         include_once "classes/" . $class . ".php";
     });
-
-    $db = new Database();
-    $fm = new Format();
-    $ct = new cart();
-    $us = new user();
-    $br = new brand();
-    $cat = new category();
-    $cs = new customer();
-    $product = new product();
 ?>
 <?php
     $c = $_GET["page"] ?? "home";

@@ -29,8 +29,20 @@ class cart
         $check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sId ='$sId'";
         $result_check_cart = $this->db->select($check_cart);
         if ($result_check_cart) {
-            $msg = "<span style='color:red; font-size:13px;'>Product(s) has already been existed in cart</span>";
-            return $msg;
+            while($result = $result_check_cart->fetch_assoc()){
+                $oldquantity = $result['quantity'];
+
+                $query_product_available = " UPDATE tbl_cart
+                SET quantity = $quantity + quantity
+                WHERE productId = '$id' AND sId ='$sId' ";
+               
+                $result_product_available = $this->db->update($query_product_available);
+
+                if($result_product_available){
+                    $msg = "<span style='color:green; font-size:13px;'>Add product successfully</span>";
+                    return $msg;
+                }
+            }
         } else {
             //Lấy data của sản phẩm trong DB product ra
             $query = "SELECT * FROM tbl_product WHERE productId = '$id'";
@@ -131,7 +143,7 @@ class cart
     }
     public function getAmountPrice($customer_id)
     {
-        $query = "SELECT price FROM tbl_order WHERE customer_id = '$customer_id' AND status = 0";
+        $query = "SELECT price, quantity FROM tbl_order WHERE customer_id = '$customer_id' AND status = 0";
         $get_price = $this->db->select($query);
         return $get_price;
     }

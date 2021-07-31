@@ -93,7 +93,7 @@ try {
 
     $mail->setFrom('caophat2713@gmail.com');
     $mail->addAddress("$email");
-
+    $mail->CharSet = 'UTF-8';
     $mail->isHTML(true);
     $mail->Subject = 'Your Order Bill';
     $mail->Body = $content;

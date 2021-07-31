@@ -160,13 +160,12 @@ class customer
         $email = mysqli_real_escape_string($this->db->link, $data['email']);
         $address = mysqli_real_escape_string($this->db->link, $data['address']);
         $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
-        $password = mysqli_real_escape_string($this->db->link, $data['password']);
+        $oldPassword = mysqli_real_escape_string($this->db->link, $data['oldpassword']);
+        $newPassword = mysqli_real_escape_string($this->db->link, $data['password']);
+        $confirmPassword = mysqli_real_escape_string($this->db->link, $data['password_confirmation']);
 
-        if ($name == "" || $email == "" || $address == "" || $phone == "" || $password == "") {
-            $alert = "<span style='color:red; font-size:13px;'>Fields must be not empty</span>";
-            return $alert;
-        } else {
-            $query = "UPDATE tbl_customer SET name='$name',email='$email',address='$address',phone='$phone',password='$password' WHERE id ='$id'";
+        if ($oldPassword == "" && $newPassword == "" && $confirmPassword == "") {
+            $query = "UPDATE tbl_customer SET name='$name',email='$email',address='$address',phone='$phone' WHERE id ='$id'";
             $result = $this->db->insert($query);
             if ($result) {
                 $alert = "<span style='color:green; font-size:13px;' >Customer Updated Successfully</span>";
@@ -175,7 +174,34 @@ class customer
                 $alert = "<span style='color:red; font-size:13px;'>Customer Updated Not Successfully</span>";
                 return $alert;
             }
-
+        }
+        else {
+            $query = "SELECT password FROM tbl_customer WHERE id = '$id'";
+            $result = $this->db->select($query);
+            if($result) {
+                while($result_checkpassword = $result->fetch_assoc()){
+                    $password_db = $result_checkpassword['password'];
+                }
+            }
+            if($oldPassword != "" && $newPassword == "") {
+                $alert = "<span style='color:red; font-size:13px;'>Please input new password</span>";
+                return $alert;
+            }
+            elseif ($oldPassword != $password_db) {
+                $alert = "<span style='color:red; font-size:13px;'>Old password is wrong</span>";
+                return $alert;
+            }
+            elseif($oldPassword != "" && $oldPassword == $password_db && $newPassword != "") {
+                $query = "UPDATE tbl_customer SET name='$name',email='$email',address='$address',phone='$phone',password='$newPassword' WHERE id ='$id'";
+                $result = $this->db->insert($query);
+                if ($result) {
+                    $alert = "<span style='color:green; font-size:13px;' >Customer Updated Successfully</span>";
+                    return $alert;
+                } else {
+                    $alert = "<span style='color:red; font-size:13px;'>Customer Updated Not Successfully</span>";
+                    return $alert;
+                }
+            }
         }
     }
 

@@ -22,7 +22,7 @@ include 'inc/header.php';
                         echo $delcart;
                     }
                 ?>
-                <table class="tblone">
+                <table class="tblone" id="list_cart">
                     <tr>
                         <th width="20%">Product Name</th>
                         <th width="10%">Image</th>
@@ -43,7 +43,7 @@ include 'inc/header.php';
                         <td><img src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></td>
                         <td><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></td>
                         <td>
-                            <form action="" method="post">
+                            <form action="?page=cart&action=updatecart" method="post">
                                 <input type="hidden" name="cartId" value="<?php echo $result['cartId'] ?>" />
                                 <input type="number" name="quantity" min="0" value="<?php echo $result['quantity'] ?>" />
                                 <input type="submit" name="submit" value="Update" />
@@ -56,7 +56,7 @@ include 'inc/header.php';
                             ?>
                         </td>
                         <td>
-                            <a onclick="return confirm('Do you want to delete this product?');" href="?page=cart&action=cart&cartid=<?php echo $result['cartId'] ?>">Delete</a>
+                        <a onclick="return confirm('Do you want to delete this product?');" href="?page=cart&action=cart&cartid=<?php echo $result['cartId'] ?>">Delete</a>
                         </td>
                     </tr>
                     <?php

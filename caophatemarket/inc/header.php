@@ -1,44 +1,37 @@
-<?php include_once 'lib/session.php';
-Session::init();?>
-
-<?php
-require_once "vendor/autoload.php";
-use Firebase\JWT\JWT;
-$key = "example_key";
+<?php 
+	include_once 'lib/session.php';
+	Session::init();
 ?>
 
 <?php
-include_once 'lib/database.php';
-include_once 'helpers/format.php';
-
-spl_autoload_register(function ($class) {
-    include_once "classes/" . $class . ".php";
-});
-
-$db = new Database();
-$fm = new Format();
-$ct = new cart();
-$us = new user();
-$br = new brand();
-$cat = new category();
-$cs = new customer();
-$product = new product();
-
+	require_once "vendor/autoload.php";
+	use Firebase\JWT\JWT;
+	$key = "example_key";
+?>
+<?php 
+    $db = new Database();
+    $fm = new Format();
+    $ct = new cart();
+    $us = new user();
+    $br = new brand();
+    $cat = new category();
+    $cs = new customer();
+    $product = new product();
 ?>
 <?php
-header("Cache-Control: no-cache, must-revalidate");
-header("Pragma: no-cache");
-header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
-header("Cache-Control: max-age=2592000");
+	header("Cache-Control: no-cache, must-revalidate");
+	header("Pragma: no-cache");
+	header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
+	header("Cache-Control: max-age=2592000");
 ?>
 <!DOCTYPE HTML>
 <head>
 <title>Store Website</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" type="image/png" href="images/favicon1.png"/> 
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="css/menu.css" rel="stylesheet" type="text/css" media="all"/>
-<link rel="shortcut icon" type="image/png" href="images/favicon1.png"/>
 <script src="js/jquerymain.js"></script>
 <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
 <script src="js/script.js" type="text/javascript"></script>
@@ -53,9 +46,6 @@ header("Cache-Control: max-age=2592000");
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
-
-
-
 
 <script type="text/javascript">
   $(document).ready(function($){
@@ -86,12 +76,16 @@ header("Cache-Control: max-age=2592000");
 									<?php
 										$check_cart = $ct->check_cart();
 										if ($check_cart) {
-											//Hiển thị biến sum của giỏ hàng(biến sum này thuộc về mỗi phiên làm việc riêng biệt)
-											$sum = Session::get("sum");
-											$qty = Session::get("qty");
-											echo $fm->format_currency($sum) . ' ' . 'đ' . '-' . 'sl:' . $qty;
+											$sum = 0;
+											$qty = 0;
+											while($result = $check_cart->fetch_assoc()){
+												$product_sum = $result["price"]*$result["quantity"]*1.1 ;
+												$sum = $sum + $product_sum;
+												$qty += $result["quantity"];
+											}
+											echo $qty;
 										} else {
-											echo 'Empty';
+											echo '0';
 										}
 									?>
 								</span>

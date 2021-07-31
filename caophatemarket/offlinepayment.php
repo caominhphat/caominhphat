@@ -112,6 +112,7 @@ include 'inc/header.php';
 										$vat = $subtotal * 0.1;
 										$gtotal = $subtotal + $vat;
 										echo $fm->format_currency($gtotal) . ' ' . 'VNĐ';
+										Session::set('current_cart', $gtotal);
 									?>
 								</td>
 							</tr>
@@ -166,12 +167,14 @@ include 'inc/header.php';
  		</div>
 		<?php 
 			if ($check_cart) {
-    			echo '<center><a href="?page=payment&action=offlinepayment&orderid=order" class="a_order" >Order Now</a></center><br>';
+    			echo '
+						<center><a href="javascript:;" class="a_order" name="order_now" >Order Now</a></center><br>
+					';
 			}
 		?>
 	</div>
 </form>
-
+<script src="js/sendmail.js"></script>
 <?php
 include 'inc/footer.php';
 ?>

@@ -49,7 +49,7 @@
 										$total = $result['price'] * $result['quantity'];
         					?>
 							<tr>
-								<td><?php echo $i; ?></td>
+								<td class="check_sendmail"><?php echo $i; ?></td>
 								<td><?php echo $result['ProductName'] ?></td>
 								<td><img src="admin/uploads/<?php echo $result['image'] ?>" alt=""/></td>
 								<td><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></td>

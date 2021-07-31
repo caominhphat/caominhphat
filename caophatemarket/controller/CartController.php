@@ -11,8 +11,14 @@ class CartController
             $cartid = $_GET['cartid'];
             $delcart = $ct->del_product_cart($cartid);
         }
+        require 'cart.php';
+    }
 
-        //Update số lượng hàng trong giỏ hàng
+    public function updatecart(){
+        spl_autoload_register(function ($class) {
+            include_once "classes/" . $class . ".php";
+        });
+        $ct = new cart();
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
             $cartId = $_POST['cartId'];
             $quantity = $_POST['quantity'];
@@ -20,11 +26,11 @@ class CartController
             if ($quantity <= 0) {
                 $delcart = $ct->del_product_cart($cartId);
             }
-            if ($update_quantity_cart || $delcart) {
-                echo "<meta http-equiv='refresh' content='0;URL=?page=cart&action=cart&id=live'>";
-            }
         }
         require 'cart.php';
     }
 
+    public function getcart(){
+        
+    }
 }

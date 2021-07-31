@@ -39,11 +39,6 @@ include 'inc/header.php';
 					<td><?php echo $result['address'] ?></td>
 				</tr>
 				<tr>
-					<td>Password</td>
-					<td>:</td>
-					<td><?php echo $result['password'] ?></td>
-				</tr>
-				<tr>
 					<td colspan="3"><a href="?page=profile&action=edit">Edit Profile</a></td>
 				</tr>
 				<?php

@@ -90,8 +90,8 @@ include 'inc/header.php';
 						</form>
 						<?php
 							if (isset($insertCart)) {
-										echo $insertCart;
-									}
+								echo $insertCart;
+							}
         				?>
 					</div>
 					<div class="add-cart">
